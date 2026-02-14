@@ -13,9 +13,9 @@
 $$
 \begin{aligned}
 \frac{dV_x(t)}{dt} = - k * {V_x(t)} * V(t),
-\ frac{dV_y(t)}{dt} = - g - k * V_y(t) * V(t),
-\ V_x(0) = V_0 * cos ɑ, V_y(0) = V_0 * sin ɑ.
-\ k = C * S * rho/2m
+\frac{dV_y(t)}{dt} = - g - k * V_y(t) * V(t),
+V_x(0) = V_0 * cos ɑ, V_y(0) = V_0 * sin ɑ.
+k = C * S * rho/2m
 \end{aligned}
 $$
 
