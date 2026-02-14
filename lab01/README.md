@@ -33,7 +33,7 @@ $$
 V_x(0) = V_0 * cos ɑ, V_y(0) = V_0 * sin ɑ.\\
 k = \frac{C * S * \rho}{2m}\\
 V(t) = \sqrt{{V_x(t)}^{2} + {V_y(t)}^{2}},\\
-после\ апроксимации\ \frac{dV(t + ∆t)}{dt} = \frac{V(t + ∆t) - V(t)}{∆t} \получаем:\\
+после\ апроксимации\ \frac{dV(t + ∆t)}{dt} = \frac{V(t + ∆t) - V(t)}{∆t} \ получаем:\\
 V_x(t + ∆t) = V_x(t) - k * V_x(t) * V(t) * ∆t,\\
 V_y(t + ∆t) = V_y(t) - ( g + k * V_y(t) * V(t)) * ∆t,\\
 x(t + ∆t) := x(t) + V_x(t + ∆t) * t,\\
