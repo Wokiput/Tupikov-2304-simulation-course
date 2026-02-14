@@ -23,9 +23,9 @@ S - площадь\ поперечного\ сечения\ тела,\\
 \rho - плотность\ воздуха (\rho = 1.29 \frac{кг}{{м}^{3}})
 \end{aligned}
 $$
-
+\begin{aligned}
 **Метод Рунге-Кутта**
-
+\end{aligned}
 $$
 \begin{aligned}
 \frac{dV_x(t)}{dt} = - k * {V_x(t)} * V(t),\\
