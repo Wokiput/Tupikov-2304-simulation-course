@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "B3idCrxnGgU=",
+  "dgSpecHash": "x+mFSKZI8UU=",
   "success": true,
-  "projectFilePath": "C:\\Users\\tupik\\source\\repos\\Tupikov-2304-simulation-course\\lab01\\WinFormsApp1\\WinFormsApp1.csproj",
+  "projectFilePath": "C:\\Users\\tupik\\Source\\Repos\\Tupikov-2304-simulation-course\\lab01\\WinFormsApp1\\WinFormsApp1.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\tupik\\.nuget\\packages\\winforms.datavisualization\\1.10.0\\winforms.datavisualization.1.10.0.nupkg.sha512"
   ],
