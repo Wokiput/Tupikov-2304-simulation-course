@@ -11,7 +11,7 @@
         "projectName": "WinFormsApp1",
         "projectPath": "C:\\Users\\tupik\\source\\repos\\Tupikov-2304-simulation-course\\lab01\\WinFormsApp1\\WinFormsApp1.csproj",
         "packagesPath": "C:\\Users\\tupik\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\tupik\\source\\repos\\Tupikov-2304-simulation-course\\lab01\\WinFormsApp1\\obj\\",
+        "outputPath": "C:\\Users\\tupik\\Source\\Repos\\Tupikov-2304-simulation-course\\lab01\\WinFormsApp1\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
