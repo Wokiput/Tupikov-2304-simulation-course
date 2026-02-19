@@ -20,14 +20,12 @@ namespace WinFormsApp1
 
         private void btn_Start_Click(object sender, EventArgs e)
         {
-            string data = "=== New Series - " + SeriesCounter + " ===\n"; //начало записи в строку для файла с данными по каждому графику
-            //подготовкадля создания новых траекотрий на графике
+            string data = "=== New Series - " + SeriesCounter + " ===\n"; 
             string SeriesName = $"series{SeriesCounter}";
             Series newSeries = new Series(SeriesName);
             newSeries.Color = Color.FromArgb((SeriesCounter * 60) % 255, (SeriesCounter * 80) % 255, (SeriesCounter * 110) % 255);
             newSeries.ChartType = SeriesChartType.Line;
             newSeries.BorderWidth = 2;
-            //считывание данных с формы
             double dt = (double)cB_dt.SelectedItem;
             y0 = (double)nUD_height.Value;
             alpha = (double)nUD_angle.Value;
@@ -35,8 +33,7 @@ namespace WinFormsApp1
             m = (double)nUD_weight.Value;
             v0 = (double)nUD_speed.Value;
             ymax = 0;
-            data += "y0 = " + y0 + "    alpha = " + alpha + "\nS = " + S + "    m = " + m + "   v0 = " + v0 + "\ndt = " + dt; //дозапись данных в строку
-            //расчёт точек для графика
+            data += "y0 = " + y0 + "    alpha = " + alpha + "\nS = " + S + "    m = " + m + "   v0 = " + v0 + "\ndt = " + dt;
             sina = Math.Sin(alpha * Math.PI / 180);
             cosa = Math.Cos(alpha * Math.PI / 180);
             k = 0.15 * S * 1.29 / (2 * m);
@@ -45,7 +42,7 @@ namespace WinFormsApp1
             vx_new = v0 * cosa; vy_new = v0 * sina;
             do
             {
-                if (ymax < y) ymax = y; //поиск максимальной высоты
+                if (ymax < y) ymax = y;
                 t += dt;
                 vx = vx_new; vy = vy_new;
                 double v = Math.Sqrt(vx * vx + vy * vy);
@@ -55,12 +52,11 @@ namespace WinFormsApp1
                 y += vy * dt;
                 newSeries.Points.AddXY(x, y);
             } while (y > 0);
-            data += "\nx = " + x + "    ymax = " + ymax + " v = " + Math.Sqrt(vx * vx + vy * vy) + "\n"; //дозапись данных в строку
-            //при апроксимации получается, что x и v - примерно равны x и v в конечной точке расчётов (когда y->0)
+            data += "\nx = " + x + "    ymax = " + ymax + " v = " + Math.Sqrt(vx * vx + vy * vy) + "\n";
             data += new string('=', 30) + "\n\n";
-            chart1.Series.Add(newSeries); //отрисовка графика
+            chart1.Series.Add(newSeries);
             SeriesCounter++;
-            File.AppendAllText(@"..\..\..\..\data.txt", data, System.Text.Encoding.UTF8); //запись строки с данными в файл
+            File.AppendAllText(@"..\..\..\..\data.txt", data, System.Text.Encoding.UTF8);
         }
         private void InitializePrecisionSelector()
         {
