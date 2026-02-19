@@ -36,8 +36,8 @@ namespace WinFormsApp1
                 sina = Math.Sin(alpha * Math.PI / 180);
                 cosa = Math.Cos(alpha * Math.PI / 180);
                 k = 0.15 * S * 1.29 / (2 * m);
-                t = 0; x = 0; y = 0;
-                newSeries.Points.AddXY(x, y);
+                t = 0; x = 0; y = y0;
+                newSeries.Points.AddXY(x, y0);
                 vx_new = v0 * cosa; vy_new = v0 * sina;
                 timer1.Start();
                 data += "\nx = " + x + "    ymax = " + ymax + " v = " + Math.Sqrt(vx * vx + vy * vy) + "\n";
