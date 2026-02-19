@@ -198,6 +198,7 @@
             nUD_height.Name = "nUD_height";
             nUD_height.Size = new Size(120, 23);
             nUD_height.TabIndex = 1;
+            nUD_height.Value = new decimal(new int[] { 100, 0, 0, 0 });
             // 
             // lbl_height
             // 

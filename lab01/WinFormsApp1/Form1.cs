@@ -13,7 +13,7 @@ namespace WinFormsApp1
         }
 
         private double y0, x, y, v0, alpha, sina, cosa, t, S, m, k, vx, vy, ymax;
-
+        public string data;
         private static int SeriesCounter = 0;
         private Series newSeries;
         private const double g = 9.8;
@@ -22,7 +22,7 @@ namespace WinFormsApp1
             if (!timer1.Enabled)
             {
                 newSeries = new Series($"series{SeriesCounter}");
-                string data = "=== New Series - " + SeriesCounter + " ===\n";
+                data = "=== New Series - " + SeriesCounter + " ===\n";
                 newSeries.Color = Color.FromArgb((SeriesCounter * 60) % 255, (SeriesCounter * 80) % 255, (SeriesCounter * 110) % 255);
                 newSeries.ChartType = SeriesChartType.Line;
                 newSeries.BorderWidth = 2;
@@ -42,10 +42,7 @@ namespace WinFormsApp1
                 vx = v0 * cosa; vy = v0 * sina;
                 chart1.Series.Add(newSeries);
                 timer1.Start();
-                data += "\nx = " + x + "    ymax = " + ymax + " v = " + Math.Sqrt(vx * vx + vy * vy) + "\n";
-                data += new string('=', 30) + "\n\n";
                 SeriesCounter++;
-                File.AppendAllText(@"..\..\..\..\data.txt", data, System.Text.Encoding.UTF8);
             }
         }
         private void timer1_Tick(object sender, EventArgs e)
@@ -58,8 +55,14 @@ namespace WinFormsApp1
             x = x + vx * (double)cB_dt.SelectedItem;
             y = y + vy * (double)cB_dt.SelectedItem;
             newSeries.Points.AddXY(x, y);
-            if (y <= 0) timer1.Stop();
-        }
+            if (y <= 0)
+            {
+                timer1.Stop(); 
+                data += "\nx = " + x + "    ymax = " + ymax + " v = " + Math.Sqrt(vx * vx + vy * vy) + "\n";
+                data += new string('=', 30) + "\n\n";
+                File.AppendAllText(@"..\..\..\..\data.txt", data, System.Text.Encoding.UTF8);
+            }
+            }
         private void InitializePrecisionSelector()
         {
             cB_dt.Items.Clear();
