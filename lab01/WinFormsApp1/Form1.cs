@@ -12,7 +12,7 @@ namespace WinFormsApp1
             chart1.Series.Clear();
         }
 
-        private double y0, x, y, v0, alpha, sina, cosa, t, S, m, k, vx, vy, vx_new, vy_new, ymax;
+        private double y0, x, y, v0, alpha, sina, cosa, t, S, m, k, vx, vy, ymax;
 
         private static int SeriesCounter = 0;
         private const double g = 9.8;
@@ -38,7 +38,7 @@ namespace WinFormsApp1
                 k = 0.15 * S * 1.29 / (2 * m);
                 t = 0; x = 0; y = y0;
                 newSeries.Points.AddXY(x, y0);
-                vx_new = v0 * cosa; vy_new = v0 * sina;
+                vx = v0 * cosa; vy = v0 * sina;
                 chart1.Series.Add(newSeries);
                 timer1.Start();
                 data += "\nx = " + x + "    ymax = " + ymax + " v = " + Math.Sqrt(vx * vx + vy * vy) + "\n";
