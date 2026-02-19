@@ -12,14 +12,14 @@ namespace WinFormsApp1
             chart1.Series.Clear();
         }
 
-        private double y0, x, y, v0, alpha, sina, cosa, t, S, m, k, vx, vy, vx_new, vy_new, ymax = -1;
+        private double y0, x, y, v0, alpha, sina, cosa, t, S, m, k, vx, vy, vx_new, vy_new, ymax;
 
         private static int SeriesCounter = 0;
         private Series newSeries = new Series($"series{SeriesCounter}");
         private const double g = 9.8;
         private void btn_Start_Click(object sender, EventArgs e)
         {
-            if (timer1.Enabled)
+            if (!timer1.Enabled)
             {
                 string data = "=== New Series - " + SeriesCounter + " ===\n";
                 newSeries.Color = Color.FromArgb((SeriesCounter * 60) % 255, (SeriesCounter * 80) % 255, (SeriesCounter * 110) % 255);
@@ -42,8 +42,9 @@ namespace WinFormsApp1
                 timer1.Start();
                 data += "\nx = " + x + "    ymax = " + ymax + " v = " + Math.Sqrt(vx * vx + vy * vy) + "\n";
                 data += new string('=', 30) + "\n\n";
-                chart1.Series.Add(newSeries);
                 SeriesCounter++;
+                chart1.Series.Add(newSeries);
+                newSeries = new Series($"series{SeriesCounter}");
                 File.AppendAllText(@"..\..\..\..\data.txt", data, System.Text.Encoding.UTF8);
             }
         }
