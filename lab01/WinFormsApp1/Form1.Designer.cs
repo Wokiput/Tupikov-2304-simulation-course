@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
@@ -47,6 +48,7 @@
             nUD_height = new NumericUpDown();
             lbl_height = new Label();
             chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            timer1 = new System.Windows.Forms.Timer(components);
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)nUD_weight).BeginInit();
             ((System.ComponentModel.ISupportInitialize)nUD_size).BeginInit();
@@ -226,6 +228,11 @@
             chart1.TabIndex = 1;
             chart1.Text = "chart1";
             // 
+            // timer1
+            // 
+            timer1.Interval = 1000;
+            timer1.Tick += timer1_Tick;
+            // 
             // form_main
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -264,5 +271,6 @@
         private Label lbl_dt;
         private ComboBox cB_dt;
         private Button btn_Clear;
+        private System.Windows.Forms.Timer timer1;
     }
 }

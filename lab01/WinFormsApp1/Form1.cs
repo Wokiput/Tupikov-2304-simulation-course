@@ -12,8 +12,8 @@ namespace WinFormsApp1
             chart1.Series.Clear();
         }
 
-        private double y0, x, y, v0, alpha, sina, cosa, t, S, m, k, vx, vy, vx_new, vy_new, ymax=-1;
-        
+        private double y0, x, y, v0, alpha, sina, cosa, t, S, m, k, vx, vy, vx_new, vy_new, ymax = -1;
+
         private static int SeriesCounter = 0;
         private Series newSeries = new Series($"series{SeriesCounter}");
         private const double g = 9.8;
@@ -47,11 +47,11 @@ namespace WinFormsApp1
                 File.AppendAllText(@"..\..\..\..\data.txt", data, System.Text.Encoding.UTF8);
             }
         }
-        private void timer1.Tick(object sender, EventArgs e)
+        private void timer1_Tick(object sender, EventArgs e)
         {
             if (ymax <= y) ymax = y;
             t += (double)cB_dt.SelectedItem;
-            double v = (double)Math.Sqrt((double)(vx* vx + vy * vy));
+            double v = (double)Math.Sqrt((double)(vx * vx + vy * vy));
             vx = vx - k * vx * v * (double)cB_dt.SelectedItem;
             vy = vy - (g + k * vy * v) * (double)cB_dt.SelectedItem;
             x = x + vx * (double)cB_dt.SelectedItem;
@@ -62,7 +62,7 @@ namespace WinFormsApp1
         private void InitializePrecisionSelector()
         {
             cB_dt.Items.Clear();
-            cB_dt.Items.Add(1.0); 
+            cB_dt.Items.Add(1.0);
             cB_dt.Items.Add(0.1);
             cB_dt.Items.Add(0.01);
             cB_dt.Items.Add(0.001);
