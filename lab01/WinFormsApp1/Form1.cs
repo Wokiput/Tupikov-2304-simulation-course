@@ -15,6 +15,7 @@ namespace WinFormsApp1
         private double y0, x, y, v0, alpha, sina, cosa, t, S, m, k, vx, vy, ymax;
 
         private static int SeriesCounter = 0;
+        private Series newSeries;
         private const double g = 9.8;
         private void btn_Start_Click(object sender, EventArgs e)
         {
